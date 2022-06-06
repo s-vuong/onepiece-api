@@ -2,7 +2,7 @@ const { request } = require('express')
 const { response } = require('express')
 const express = require('express')
 const app = express() // To allow this variable to use all the methods related to express.
-const portNum = 8000
+const PORT = 8000
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
@@ -45,6 +45,6 @@ app.get('/api/:name', (req, res) => {
     res.json(pirates[reqName])
 } )
 
-app.listen(process.env.portNum || portNum, () => {
-    console.log(`The server is running on port ${portNum}`)
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`The server is running on port ${PORT}`)
 })
