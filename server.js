@@ -2,7 +2,10 @@ const { request } = require('express')
 const { response } = require('express')
 const express = require('express')
 const app = express() // To allow this variable to use all the methods related to express.
+const cors = require('cors')
 const PORT = 8000
+
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
